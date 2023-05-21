@@ -43,7 +43,7 @@ h1.contenthead {
 }
 nav ul {
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 15px 0;
     padding: 0;
     text-align: center;
 }
@@ -56,21 +56,39 @@ nav li a {
     color: #2962ff;
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
+}
+nav li a.active {
+    background-color: rgb(44, 93, 184);
+    color: white;
+}
+nav li a:hover:not(.active) {
+    background-color: #dddddd;
+    color: rgb(16, 37, 44);
 }
 .container {
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     box-sizing: border-box;
+    margin-bottom: 25px;
 }
+.container.active {
+    display: flex;
+}
+
 .panel {
     display: flex;
     flex-direction: column;    
     width: 43%;
-    margin: 10px 30px;
+    margin: auto;
     border: 1px solid rgb(72, 131, 199);
     box-sizing: border-box;
+}
+.panel:hover {
+    box-shadow: 0px 0px 15px rgba(89, 114, 160, 0.774);
+    transition-duration: 0.8s;
 }
 .panel-head {
     text-align: center;
@@ -89,9 +107,53 @@ nav li a {
     text-align: center;
 }
 input[required] {
+    border: 1px solid rgb(147, 156, 165);
+    border-radius: 5px;
     padding: 10px;
-    width: 75%;
+    width: 80%;
     margin: 10px;
+    outline: none;
+}
+input[required]:focus {
+    box-shadow: 0px 0px 15px rgb(72, 131, 199);
+    transition-duration: 0.8s;
+    transition-delay: -0.2s;
+    border-color: rgb(72, 131, 199);
+}
+button {
+    padding: 10px 30px;
+    font-family: 'Space Mono';
+    font-weight: bold;
+    font-size: large;
+    background-color: rgb(72, 131, 199);
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+}
+button:hover {
+    color :rgb(72, 131, 199);
+    background-color: white;
+    border: 1px solid rgb(72, 131, 199);
+    transition: 0.6s;
+}
+button:active {
+    outline: 2px solid black;
+}
+input[type='reset'] {
+    padding: 7px 13px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 180, 67);
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+input[type='reset']:hover {
+    color: rgb(255, 180, 67);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 180, 67) ;
+    transition: 0.4s;
 }
 .text-left {
     text-align: left;
@@ -99,16 +161,25 @@ input[required] {
 .text-right {
     text-align: right;
 }
-.squareimage {
+.figure {
     display: block;
     max-width: 50%;
     max-height: 50%;
     margin: auto;
 }
+.transition-effect {
+    transition: opacity 0.5s ease-in-out;
+}
 #output-luas {
     display: none;
 }
 #output-keliling {
+    display: none;
+}
+#output-luas-r {
+    display: none;
+}
+#output-keliling-r {
     display: none;
 }
 
