@@ -1,3 +1,114 @@
-p.result-luas {
-    display: block;
+body {
+    background-color: #dfdfdf94;
 }
+header {
+    background-color: #2e8fdb;
+    text-align: center;
+    padding: 35px 0px;
+    width: 100%;
+    margin-left: -10px; 
+    margin-right: -10px; 
+    margin-top: -8px;
+    padding-left: 10px; 
+    padding-right: 10px;
+}
+.title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    color: ghostwhite;
+}
+.subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 25px;
+    color: #c7c6c6;
+    letter-spacing: -1px;
+}
+.card {
+    font-family: 'Space Mono';
+    border: 1px solid lightgrey;
+    background-color: white;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.contenthead {
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+h1.contenthead {
+    line-height: 20px;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+nav li {
+    display: inline-block;
+    margin: 10px;
+} 
+nav li a {
+    text-decoration: none;
+    color: #2962ff;
+    padding: 10px;
+    border-radius: 10px;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.panel {
+    display: flex;
+    flex-direction: column;    
+    width: 43%;
+    margin: 10px 30px;
+    border: 1px solid rgb(72, 131, 199);
+    box-sizing: border-box;
+}
+.panel-head {
+    text-align: center;
+    color: white;
+    font-size: large;
+    padding: 15px 0;
+    background-color: rgb(72, 131, 199);
+}
+.panel-content {
+    padding: 10px 35px;
+    text-align: center;
+}
+.panel-foot {
+    border-top: 1px solid rgb(184, 184, 184);
+    padding: 10px 35px;
+    text-align: center;
+}
+input[required] {
+    padding: 10px;
+    width: 75%;
+    margin: 10px;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.squareimage {
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    margin: auto;
+}
+#output-luas {
+    display: none;
+}
+#output-keliling {
+    display: none;
+}
+
