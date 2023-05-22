@@ -35,6 +35,18 @@ function setActivePage(event) {
             }
 }
 
+// Function to restrict other input than number
+function validateNumericInput(input) {
+    // Remove any non-numeric and non-decimal characters
+    input.value = input.value.replace(/[^0-9.]/g, '');
+  
+    // Ensure only one decimal point is allowed
+    const count = (input.value.match(/\./g) || []).length;
+    if (count > 1) {
+      input.value = input.value.replace(/\.+$/, '');
+    }
+}
+
 // Persegi
 
 // Make button function to get output for Luas Persegi from the input value
@@ -42,10 +54,12 @@ function hitungLuas() {
     // Get the value from the input
     var sisiLuas = document.getElementById("sisi-luas").value;
     var output = document.getElementById("output-luas");
+    const resultSquare = sisiLuas*sisiLuas
+    const fixedLuasSquare = resultSquare.toFixed(2);
 
     // Print text and result for the output
     document.getElementById("rumus-luas").innerHTML = sisiLuas + ' x ' + sisiLuas;
-    document.getElementById("result-luas").innerHTML = sisiLuas*sisiLuas
+    document.getElementById("result-luas").innerHTML = fixedLuasSquare
     
     // Display the output paragraph 
     output.style.display = "block";
@@ -81,9 +95,11 @@ function hitungLuasRectangle() {
     var panjangLuas = document.getElementById("panjang-luas").value;
     var lebarLuas = document.getElementById("lebar-luas").value;
     var output = document.getElementById("output-luas-r");
+    const resultRect = panjangLuas*lebarLuas
+    const fixedResultLuasRect = resultRect.toFixed(2);
 
     document.getElementById("rumus-luas-r").innerHTML = panjangLuas + ' x ' + lebarLuas;
-    document.getElementById("result-luas-r").innerHTML = panjangLuas*lebarLuas
+    document.getElementById("result-luas-r").innerHTML = fixedResultLuasRect
     
     output.style.display = "block";
 }
@@ -100,10 +116,12 @@ function hitungKelilingRectangle() {
     const panjangKeliling = document.getElementById("panjang-keliling").value;
     const lebarKeliling = document.getElementById("lebar-keliling").value;
     var output = document.getElementById("output-keliling-r");
-    const totalKeliling = parseInt(panjangKeliling, 10) + parseInt(lebarKeliling, 10)
+    const totalKeliling = parseFloat(panjangKeliling, 10) + parseFloat(lebarKeliling, 10)
+    const fixedResultKelilingRect = totalKeliling.toFixed(2);
 
-    document.getElementById("rumus-keliling-r").innerHTML = '2 x (' + panjangKeliling + ' + ' + lebarKeliling + ')';
-    document.getElementById("result-keliling-r").innerHTML = 2*totalKeliling
+    document.getElementById("rumus-keliling-r").innerHTML = 
+    '2 x (' + panjangKeliling + ' + ' + lebarKeliling + ')';
+    document.getElementById("result-keliling-r").innerHTML = 2*fixedResultKelilingRect
     
     output.style.display = "block";
 }
@@ -114,3 +132,14 @@ function resetKelilingRectangle(flag) {
     document.getElementById("panjang-keliling").value = '';
     document.getElementById("lebar-keliling").value = '';
 }
+
+// Time
+function updateTime() {
+    const currentTimeElement = document.getElementById("current-time");
+    const currentTime = new Date();
+    const formattedTime = currentTime.toLocaleTimeString();
+    currentTimeElement.textContent = formattedTime;
+  }
+  
+// Update the time every second
+setInterval(updateTime, 1000);

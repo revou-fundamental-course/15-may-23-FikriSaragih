@@ -22,11 +22,11 @@
             </div>
             <nav>
                 <ul>
-                    <li><a id="square-link">Persegi</a></li>
+                    <li><a class="active" id="square-link">Persegi</a></li>
                     <li><a id="rectangle-link">Persegi Panjang</a></li>
                 </ul>
             </nav>
-            <div id="page-square" class="container">
+            <div id="page-square" class="container active">
                 <div class="panel">
                     <div class="panel-head">
                         <h2>Luas Persegi</h2>
@@ -44,7 +44,8 @@
                     <div class="panel-foot">
                         <h2>Hitung Luas Persegi</h2>
                         <p>
-                            <input  id="sisi-luas" name="sisi-luas" placeholder="Nilai Sisi" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                            <input  id="sisi-luas" name="sisi-luas" placeholder="Nilai Sisi" required 
+                            oninput="validateNumericInput(this)">
                         </p>
                         <div id="output-luas" name="output-luas">
                             <p class="text-left">L = S x S<br>
@@ -76,7 +77,8 @@
                     <div class="panel-foot">
                         <h2>Hitung Keliling Persegi</h2>
                         <p>
-                            <input id="sisi-keliling" name="sisi-keliling" placeholder="Nilai Sisi" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                            <input id="sisi-keliling" name="sisi-keliling" placeholder="Nilai Sisi" required 
+                            oninput="validateNumericInput(this)">
                         </p>
                         <div id="output-keliling" name="output-keliling">
                             <p class="text-left">K = S x 4<br>
@@ -111,8 +113,10 @@
                     <div class="panel-foot">
                         <h2>Hitung Luas Persegi Panjang</h2>
                         <p>
-                            <input  id="panjang-luas" name="panjang-luas" placeholder="Nilai Panjang" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <input  id="lebar-luas" name="lebar-luas" placeholder="Nilai Lebar" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                            <input  id="panjang-luas" name="panjang-luas" placeholder="Nilai Panjang" required 
+                            oninput="validateNumericInput(this)">
+                            <input  id="lebar-luas" name="lebar-luas" placeholder="Nilai Lebar" required 
+                            oninput="validateNumericInput(this)">
                         </p>
                         <div id="output-luas-r" name="output-luas-r">
                             <p class="text-left">L = p x l<br>
@@ -145,11 +149,13 @@
                     <div class="panel-foot">
                         <h2 style="font-size: 21px; margin: 21px 0;">Hitung Keliling Persegi Panjang</h2>
                         <p>
-                            <input id="panjang-keliling" name="panjang-keliling" placeholder="Nilai Panjang" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <input id="lebar-keliling" name="lebar-keliling" placeholder="Nilai Lebar" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                            <input id="panjang-keliling" name="panjang-keliling" placeholder="Nilai Panjang" required 
+                            oninput="validateNumericInput(this)">
+                            <input id="lebar-keliling" name="lebar-keliling" placeholder="Nilai Lebar" required 
+                            oninput="validateNumericInput(this)">
                         </p>
                         <div id="output-keliling-r" name="output-keliling-r">
-                            <p class="text-left">K = S x 4<br>
+                            <p class="text-left">K = 2 x (p + l)<br>
                             K = <span id="rumus-keliling-r"></span><br>
                             K = <span id="result-keliling-r"></span></p>
                         </div>   
@@ -164,7 +170,12 @@
             </div>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="watermark">
+            <span id="current-time"></span>
+            <span class="tooltiptext">This Project made by Kaitou</span>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
