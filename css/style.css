@@ -67,7 +67,7 @@ nav li a:hover:not(.active) {
     color: rgb(16, 37, 44);
 }
 .container {
-    display: none;
+    display: none;              /*for nav transition*/
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -75,7 +75,7 @@ nav li a:hover:not(.active) {
     margin-bottom: 25px;
 }
 .container.active {
-    display: flex;
+    display: flex;              /*to display the container*/
 }
 
 /*Responsive style for smaller media*/
