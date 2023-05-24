@@ -78,6 +78,20 @@ nav li a:hover:not(.active) {
     display: flex;
 }
 
+/*Responsive style for smaller media*/g
+@media only screen and (max-width: 950px) {
+    .container {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        width: auto;
+    }
+    .panel {
+        display: flex;
+        flex-direction: column;    
+        border: 1px solid rgb(72, 131, 199);
+    }
+}
 .panel {
     display: flex;
     flex-direction: column;    
@@ -226,3 +240,5 @@ input[type='reset']:hover {
     visibility: visible;
     opacity: 1;
 }
+
+
